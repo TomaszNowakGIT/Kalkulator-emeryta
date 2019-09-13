@@ -8,6 +8,7 @@ let input;
 function main() {
   searchForElements();
   prepareDOMEvents();
+  dialogstart();
 }
 
 function searchForElements() {
@@ -34,9 +35,28 @@ function addElementClic() {
 
 function dialogm(){
   dialog.innerHTML = `<h1>Hej kolego/koleżanko</h1>
-  <h2>chyba musisz coś wpisać</h2>`;
+  <h2>chyba musisz coś wpisać !!</h2>`;
   dialog.style.display ="block";
-  idInterwalu = setInterval(dialognone, 5000);
+  dialognone = setInterval(dialognone, 5000);
+}
+
+function dialogstart(){
+  dialog.innerHTML = `<h1>Nie ma na co czekać,</h1>
+  <h2>uzupełnij wszystkie pola.</h2>`;
+  dialog.style.display ="block";
+  dialognone = setInterval(dialognone, 5000);
+}
+function dialogproblem(){
+  dialog.innerHTML = `<h1>Hej,</h1>
+  <h2>chyba coś ściemniasz.</h2>`;
+  dialog.style.display ="block";
+  dialognone = setInterval(dialognone, 5000);
+}
+function dialogend(){
+  dialog.innerHTML = `<h1>No i teraz</h1>
+  <h2>wszystko w temacie.</h2>`;
+  dialog.style.display ="block";
+  dialognone = setInterval(dialognone, 5000);
 }
 
 function dialognone(){
@@ -97,11 +117,18 @@ function convert() {
   
   if(wynik_wyliczen >= 1){
     show_result(wynik_wyliczen);
-  }
+    dialogend();
+  }if(wynik_wyliczen === Infinity || wynik_wyliczen > -1 || wynik_wyliczen === -Infinity ){
+    dialogproblem();
+    return;
+
+     }
   
   }
 
 function show_result(wynik_wyliczen) {
-  resulthtml.innerHTML = +Math.floor(wynik_wyliczen) + " zł" + "<br>"+ " miesięcznie";}
+  resulthtml.innerHTML = +Math.floor(wynik_wyliczen) + " zł" + "<br>"+ " miesięcznie";
+  }
+  
 
 document.addEventListener("DOMContentLoaded", main);
