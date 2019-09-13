@@ -34,6 +34,7 @@ function addElementClic() {
 }
 
 function dialogm(){
+  
   dialog.innerHTML = `<h1>Hej kolego/koleżanko</h1>
   <h2>chyba musisz coś wpisać !!</h2>`;
   dialog.style.display ="block";
@@ -41,18 +42,21 @@ function dialogm(){
 }
 
 function dialogstart(){
+  
   dialog.innerHTML = `<h1>Nie ma na co czekać,</h1>
   <h2>uzupełnij wszystkie pola.</h2>`;
   dialog.style.display ="block";
   dialognone = setInterval(dialognone, 5000);
 }
 function dialogproblem(){
+ 
   dialog.innerHTML = `<h1>Hej,</h1>
   <h2>chyba coś ściemniasz.</h2>`;
   dialog.style.display ="block";
   dialognone = setInterval(dialognone, 5000);
 }
 function dialogend(){
+  
   dialog.innerHTML = `<h1>No i teraz</h1>
   <h2>wszystko jasne.</h2>`;
   dialog.style.display ="block";
@@ -61,6 +65,7 @@ function dialogend(){
 
 function dialognone(){
    dialog.style.display ="none";
+   clearInterval(dialognone)
 }
 
 function validateForm(
