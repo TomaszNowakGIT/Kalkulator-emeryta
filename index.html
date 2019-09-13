@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl_PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kalkulator emerytury</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="icons/flaticon.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900&display=swap" rel="stylesheet">
+</head>
+<body>
+        <script src="script.js"></script>
+<header>
+        <div class="header-container">
+        <i class="glyph-icon flaticon-pension"></i>
+        <h1 class="title_header">Kalkulator szczęścia na emeryturze.</h1>
+        </div>
+</header>
+
+<section id="question">
+        <div class="label">
+            <div class="que"><lebel>Ile masz lat?</lebel><div class="alt"><input type="number" min="5" id="age" maxlength=2 placeholder="wpisz..."required></div></div>
+            <div class="que"><lebel>Ile masz oszczędności?</lebel><div class="cash"><input type="number" id="saving" placeholder="wpisz..."required></div></div>
+            <div class="que"><lebel>Kiedy przejdziesz na emeryturę?</lebel><div class="alt"><input  type="number" min="5" id="retirement" maxlength=2 placeholder="wpisz..."required></div></div>
+            <div class="que"><lebel>Ile lat chciałbyś żyć?</lebel><div class="alt"><input type="number" min="5" id="death" maxlength=3 placeholder="wpisz..."required></div></div>
+            <div class="que">
+                <lebel>Ile chcesz dostawać na emeryturze?</lebel><div class="cash"><input  type="number" min="5" id="pension" placeholder="wpisz..." required></div></div>
+        </div>
+            <div id="btn_view_result">
+            <button class="glyph-icon flaticon-money"></button>
+            <p>oblicz</p>
+        </div>
+</section>
+<section class="question-result">
+    <div class="question-result-img">
+        <div class="laska"></div>
+        <hgroup id="speech-bubble" class="speech-bubble">
+                <h1></h1>
+                <h2></h2>
+            </hgroup>
+        </div>
+    <div class="nowa"><h1>Nasz kalkulator policzy ile będziesz musiał/a miesięcznie odkładać, aby osiągnąć takie wynagrodzenie na emeryturze.</h1></div>
+    <div class="sum">
+            <h1 class="title">Aby zostać szczęśliwym emerytem musisz odkładać</h1>
+            <div id="result" class="result">-</div>
+                </div>
+</section>
+
+
+</body>
+</html>
