@@ -54,7 +54,7 @@ function dialogproblem(){
 }
 function dialogend(){
   dialog.innerHTML = `<h1>No i teraz</h1>
-  <h2>wszystko w temacie.</h2>`;
+  <h2>wszystko jasne.</h2>`;
   dialog.style.display ="block";
   dialognone = setInterval(dialognone, 5000);
 }
@@ -118,7 +118,7 @@ function calculateResult() {
   if(wynik_wyliczen >= 1){
     show_result(wynik_wyliczen);
     dialogend();
-  }if(wynik_wyliczen === Infinity || wynik_wyliczen > -1 || wynik_wyliczen === -Infinity ){
+  }if(wynik_wyliczen === Infinity || wynik_wyliczen < 0 || wynik_wyliczen === -Infinity ){
     dialogproblem();
     return;
 
