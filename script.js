@@ -30,7 +30,7 @@ function prepareDOMEvents() {
 }
 
 function addElementClic() {
-  convert();
+  calculateResult();
 }
 
 function dialogm(){
@@ -63,7 +63,7 @@ function dialognone(){
    dialog.style.display ="none";
 }
 
-function ifinput(
+function validateForm(
   age_input,
   saving_input,
   retirement_input,
@@ -77,7 +77,7 @@ function ifinput(
     death_input,
     pension_input === Number())
   ) {
-    convert();
+    calculateResult();
   } else if (
     (age_input,
     saving_input,
@@ -88,14 +88,14 @@ function ifinput(
     dialogm();
   }
 }
-function convert() {
+function calculateResult() {
   let age_input = age.value;
   let saving_input = saving.value;
   let retirement_input = retirement.value;
   let death_input = death.value;
   let pension_input = pension.value;
 
-  ifinput(
+  validateForm(
     age_input,
     saving_input,
     retirement_input,
