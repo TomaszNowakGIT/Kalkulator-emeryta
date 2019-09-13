@@ -123,7 +123,7 @@ function calculateResult() {
   if(wynik_wyliczen >= 1){
     show_result(wynik_wyliczen);
     dialogend();
-  }if(wynik_wyliczen === Infinity || wynik_wyliczen > -1 || wynik_wyliczen === -Infinity ){
+  }if(wynik_wyliczen === Infinity || wynik_wyliczen === -Infinity ){
     dialogproblem();
     return;
 
