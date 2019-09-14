@@ -8,7 +8,7 @@ let input;
 function main() {
   searchForElements();
   prepareDOMEvents();
-  dialogstart();
+  dialogstart(clearInterval(dialognone));
 }
 
 function searchForElements() {
@@ -26,46 +26,67 @@ function searchForElements() {
 }
 
 function prepareDOMEvents() {
-  addBtn.addEventListener("click", addElementClic);
+  addBtn.addEventListener("click", calculateResult,stopInterval);
+  
 }
 
-function addElementClic() {
-  calculateResult();
+
+function iliterateInput(){
+  for (let i = 0; i < input.length; i++ ){
+    input[i].style.border = "1px red solid"
+  }
+defaultColor = setInterval(iliterateInputDefault, 4000);
+}
+function iliterateInputDefault(){
+  for (let i = 0; i < input.length; i++ ){
+    input[i].style.border = "1px grey solid"
+  }
+
 }
 
 function dialogm(){
-  
+  dialognone = setInterval(dialognone, 5000);
   dialog.innerHTML = `<h1>Hej kolego/koleżanko</h1>
   <h2>chyba musisz coś wpisać !!</h2>`;
   dialog.style.display ="block";
-  dialognone = setInterval(dialognone, 5000);
+  
 }
 
 function dialogstart(){
-  
+  dialognone = setInterval(dialognone, 5000);
   dialog.innerHTML = `<h1>Nie ma na co czekać,</h1>
   <h2>uzupełnij wszystkie pola.</h2>`;
   dialog.style.display ="block";
-  dialognone = setInterval(dialognone, 5000);
+ 
 }
 function dialogproblem(){
- 
+  dialognone = setInterval(dialognone, 5000);
   dialog.innerHTML = `<h1>Hej,</h1>
   <h2>chyba coś ściemniasz.</h2>`;
   dialog.style.display ="block";
-  dialognone = setInterval(dialognone, 5000);
+ 
 }
 function dialogend(){
-  
+  dialognone = setInterval(dialognone, 5000);
   dialog.innerHTML = `<h1>No i teraz</h1>
   <h2>wszystko jasne.</h2>`;
   dialog.style.display ="block";
-  dialognone = setInterval(dialognone, 5000);
+ 
 }
 
 function dialognone(){
    dialog.style.display ="none";
-   clearInterval(dialognone)
+   
+}
+function stopInterval(){
+  clearInterval(dialognone)
+}
+function validateLoop(input){
+  for (let i = 0; i < input.length; i++ ){
+    input[i].value
+    return
+  }
+  debugger;
 }
 
 function validateForm(
@@ -74,15 +95,19 @@ function validateForm(
   retirement_input,
   death_input,
   pension_input
-) {
+)
+
+ {
+  
   if (
     (age_input,
-    saving_input,
-    retirement_input,
-    death_input,
-    pension_input === Number())
+      saving_input,
+      retirement_input,
+      death_input,
+      pension_input === Number())
   ) {
     calculateResult();
+    
   } else if (
     (age_input,
     saving_input,
@@ -91,6 +116,7 @@ function validateForm(
     pension_input === "")
   ) {
     dialogm();
+    iliterateInput();
   }
 }
 function calculateResult() {
