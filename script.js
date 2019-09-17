@@ -79,53 +79,25 @@ function stopInterval(){
 
 function validateLoop(input){
   for (let i = 0; i < input.length; i++ ){
-    input[i].value
-    return
+
+    if (input[i].value === ''){
+      dialogm();
+      iliterateInput();
+    }else if(input[i].value === Number()) {
+      calculateResult();
+    }
   }
 }
 
-function validateForm(
-  ageInput,
-  savingInput,
-  retirementInput,
-  deathInput,
-  pensionInput
-){
-    if (
-    (ageInput,
-      savingInput,
-      retirementInput,
-      deathInput,
-      pensionInput === Number())
-  ) {
-    calculateResult();
-
-  } else if (
-    (ageInput,
-      savingInput,
-      retirementInput,
-      deathInput,
-      pensionInput === "")
-  ) {
-    dialogm();
-    iliterateInput();
-  }
-}
 
 function calculateResult() {
+  validateLoop(input);
+  
   let ageInput = age.value;
   let savingInput = saving.value;
   let retirementInput = retirement.value;
   let deathInput = death.value;
   let pensionInput = pension.value;
-
-  validateForm(
-    ageInput,
-    savingInput,
-    retirementInput,
-    deathInput,
-    pensionInput
-  );
 
   let timeToRetire = (Math.floor(retirementInput) - Math.floor(ageInput)) * Math.floor(12);
   let retiredYears = (Math.floor(deathInput) - Math.floor(retirementInput)) * Math.floor(12);
