@@ -34,7 +34,7 @@ function iliterateInput() {
     inputsWithError[i].style.border = "1px red solid"
   }
 
-  defaultColor = setInterval(iliterateInputDefault, 4000)
+setInterval(iliterateInputDefault, 4000)
 
 }
 
@@ -77,13 +77,16 @@ function dialognone() {
 }
 
 function stopInterval() {
-  clearInterval(dialognone)
+  clearInterval(dialognone);
+  clearInterval(iliterateInputDefault);
 }
 
 function validateLoop(input) {
   for (let i = 0; i < input.length; i++) {
     if (input[i].value === '') {
       inputsWithError.push((input[i]))
+      iliterateInput();
+      dialogm();
     }
 
   }
