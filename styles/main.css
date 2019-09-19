@@ -80,7 +80,13 @@ span {
 }
 input {
 margin-left: 10px;
+}
+.error{
+  border:1px red solid;
+}
 
+.default{
+  border:1px grey solid;
 }
 .question-result {
   display: flex;

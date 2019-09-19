@@ -30,18 +30,14 @@ function prepareDOMEvents() {
 }
 
 function iliterateInput() {
-  for (let i = 0; i < inputsWithError.length; i++) {
-    inputsWithError[i].style.border = "1px red solid"
-  }
+  inputsWithError.forEach(el => { el.classList.add("error"); })
 
 setInterval(iliterateInputDefault, 4000)
 
 }
 
 function iliterateInputDefault() {
-  for (let i = 0; i < input.length; i++) {
-    input[i].style.border = "1px grey solid"
-  }
+  input.forEach(el => { el.classList.add("default");  })
 }
 
 function dialogm() {
